@@ -31,5 +31,10 @@ Route::get('/asdf/qwer/zc', function () {
 
 Route::get('second', [App\Http\Controllers\SimpleController::class, 'view25']);
 
-Route::get('departments', [App\Http\Controllers\DepartmentController::class,
-'index']);
+// Route::get('departments', [App\Http\Controllers\DepartmentController::class,
+// 'index']);
+
+Route::resource('departments', App\Http\Controllers\DepartmentController::class);
+Auth::routes();
+
+Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
